@@ -8,7 +8,7 @@ use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
 use Dcat\Admin\Http\Controllers\AdminController;
 
-class LocationController extends AdminController
+class CustomController extends AdminController
 {
     /**
      * Make a grid builder.
@@ -65,10 +65,10 @@ class LocationController extends AdminController
             $form->html(view('coordinate'), '区域选择'); // 加载自定义地图
             $form->hidden('map_points', '坐标点'); // 隐藏域，用于接收坐标点（这里如果想数据回填可以，->value('49.121221,132.2321312')）
             $form->hidden('map_area', '当前区域'); // 隐藏域，用于接收详细点位地址
-         /*   $latitude = 'latitude';
+            $latitude = 'latitude';
             $longitude = 'longitude';
             $label = '地图控件';
-            $form->map($latitude, $longitude, $label);*/
+            $form->map($latitude, $longitude, $label);
             $form->text('column_id');
 
             $form->display('created_at');
