@@ -7,6 +7,7 @@ use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
 use Dcat\Admin\Http\Controllers\AdminController;
+use Dcat\Admin\Widgets\Dropdown;
 
 class LocationController extends AdminController
 {
@@ -58,7 +59,11 @@ class LocationController extends AdminController
      */
     protected function form()
     {
+
+
         return Form::make(new Location(), function (Form $form) {
+
+
             $form->display('id');
             $form->text('location');
             $form->text('address');

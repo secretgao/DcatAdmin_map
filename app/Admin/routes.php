@@ -14,6 +14,7 @@ Route::group([
 
     $router->get('/', 'HomeController@index');
     $router->resource('/location', LocationController::class);
+    $router->resource('/column', ColumnController::class);
     $router->get('/custom/map', 'CustomController@customMap');
 
 });
