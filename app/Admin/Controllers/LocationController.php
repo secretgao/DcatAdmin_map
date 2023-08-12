@@ -74,7 +74,7 @@ class LocationController extends AdminController
             $label = '地图控件';
             $form->map($latitude, $longitude, $label);*/
             //$form->text('column_id');
-
+        
             $options = Column::pluck('name','id');
             $form->select('column_id')->options($options);
 
