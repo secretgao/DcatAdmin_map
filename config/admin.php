@@ -249,6 +249,7 @@ return [
 
         'default_icon' => 'feather icon-circle',
     ],
+   // 'map_provider' => 'tencent',
 
     /*
     |--------------------------------------------------------------------------
