@@ -7,7 +7,7 @@ return [
     'fields' => [
         'location' => '地理位置',
         'address' => '地址',
-        'column_id' => 'column_id',
+        'column_id' => '所属专栏',
     ],
     'options' => [
     ],

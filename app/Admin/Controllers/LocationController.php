@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Column;
 use App\Admin\Repositories\Location;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
@@ -59,8 +60,6 @@ class LocationController extends AdminController
      */
     protected function form()
     {
-
-
         return Form::make(new Location(), function (Form $form) {
 
 
@@ -74,7 +73,10 @@ class LocationController extends AdminController
             $longitude = 'longitude';
             $label = '地图控件';
             $form->map($latitude, $longitude, $label);*/
-            $form->text('column_id');
+            //$form->text('column_id');
+
+            $options = Column::pluck('name','id');
+            $form->select('column_id')->options($options);
 
             $form->display('created_at');
             $form->display('updated_at');
