@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<img src="/vendor/dcat-admin/images/logo.png" width="35"> &nbsp;Dcat Admin',
+    'logo' => '<img src="/vendor/dcat-admin/images/logo1.png" width="35"> &nbsp;Dcat Admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<img src="/vendor/dcat-admin/images/logo.png">',
+    'logo-mini' => '<img src="/vendor/dcat-admin/images/logo1.png">',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'favicon' => null,
+    'favicon' => '/vendor/dcat-admin/images/logo.png',
 
     /*
 	 |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
 	 | Set a default avatar for newly created users.
 	 |
 	 */
-	'default_avatar' => '@admin/images/default-avatar.jpg',
+    'default_avatar' => '@admin/images/default-avatar.jpg',
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +71,8 @@ return [
 
         'namespace' => 'App\\Api\\Controllers',
 
-        'middleware' => ['web', 'admin'],
+        //  'middleware' => ['web', 'admin'],
+        'middleware' => [],
     ],
 
     /*
@@ -245,7 +246,7 @@ return [
         // Whether enable permission bind to menu.
         'permission_bind_menu' => true,
 
-		'default_icon' => 'feather icon-circle',
+        'default_icon' => 'feather icon-circle',
     ],
 
     /*
@@ -304,8 +305,8 @@ return [
         'role_menu_table'        => 'admin_role_menu',
         'permission_menu_table'  => 'admin_permission_menu',
         'settings_table'         => 'admin_settings',
-		'extensions_table'       => 'admin_extensions',
-		'extension_histories_table' => 'admin_extension_histories',
+        'extensions_table'       => 'admin_extensions',
+        'extension_histories_table' => 'admin_extension_histories',
     ],
 
     /*
@@ -319,7 +320,7 @@ return [
         // default, blue, blue-light, green
         'color' => 'default',
 
-		// sidebar-separate
+        // sidebar-separate
         'body_class' => [],
 
         'horizontal_menu' => false,
@@ -327,7 +328,7 @@ return [
         'sidebar_collapsed' => false,
 
         // light, primary, dark
-		'sidebar_style' => 'light',
+        'sidebar_style' => 'light',
 
         'dark_mode_switch' => false,
 

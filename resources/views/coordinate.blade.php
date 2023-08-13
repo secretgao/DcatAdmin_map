@@ -4,7 +4,7 @@
      * 设置坐标点
      */
     function setCoordinate(value) {
-        var $coordinate = $('.field_map_points');
+        var $coordinate = $('.field_location');
         $coordinate.val(value);
     }
 
@@ -13,7 +13,7 @@
      * @param value
      */
     function setCoordinateArea(value) {
-        var $coordinate = $('.field_map_area');
+        var $coordinate = $('.field_address');
         $coordinate.val(value);
     }
 
@@ -21,7 +21,7 @@
      * 获取坐标
      */
     function getCoordinate() {
-        var $coordinate = $('.field_map_points');
+        var $coordinate = $('.field_location');
         var value = $coordinate.val();
         if (value == '') {
             var str = '42.094146111,121.849365';

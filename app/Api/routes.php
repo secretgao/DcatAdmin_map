@@ -13,5 +13,6 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index');
+    $router->get('/location/index', 'HomeController@test');
 
 });

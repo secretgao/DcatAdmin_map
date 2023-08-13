@@ -8,7 +8,7 @@ use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
 use Dcat\Admin\Http\Controllers\AdminController;
-use Dcat\Admin\Widgets\Dropdown;
+
 
 class LocationController extends AdminController
 {
@@ -26,10 +26,10 @@ class LocationController extends AdminController
             $grid->column('column_id');
             $grid->column('created_at');
             $grid->column('updated_at')->sortable();
-        
+
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
-        
+
             });
         });
     }
@@ -62,20 +62,12 @@ class LocationController extends AdminController
     {
         return Form::make(new Location(), function (Form $form) {
 
-
             $form->display('id');
-            $form->text('location');
-            $form->text('address');
+            $form->text('location')->addElementClass('field_location');
+            $form->text('address')->addElementClass('field_address');
             $form->html(view('coordinate'), '区域选择'); // 加载自定义地图
-            $form->hidden('map_points', '坐标点'); // 隐藏域，用于接收坐标点（这里如果想数据回填可以，->value('49.121221,132.2321312')）
-            $form->hidden('map_area', '当前区域'); // 隐藏域，用于接收详细点位地址
-         /*   $latitude = 'latitude';
-            $longitude = 'longitude';
-            $label = '地图控件';
-            $form->map($latitude, $longitude, $label);*/
-            //$form->text('column_id');
-        
-            $options = Column::pluck('name','id');
+
+            $options = Column::pluck('name', 'id');
             $form->select('column_id')->options($options);
 
             $form->display('created_at');
@@ -89,14 +81,5 @@ class LocationController extends AdminController
                 $footer->disableCreatingCheck();
             });
         });
-    }
-
-    /**
-     * 自定义地图模型
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function customMap()
-    {
-        return view('map');
     }
 }
